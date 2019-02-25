@@ -7,7 +7,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
+  
+  
 </head>
+<style>
+body{
+
+background:url(resources/images/wallpaper2.jpg) no-repeat;
+background-size: cover;
+}
+</style>
 <body>
 
 
@@ -18,7 +28,7 @@
       <a class="navbar-brand" href="#">OnlineShop</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="${pageContext.request.contextPath}/home">Home</a></li>
+      <li class="active"><a href="${pageContext.request.contextPath}/home">Home <i class="fas fa-home"></i></a></li>
     
      <c:if test="${!sessionScope.loggedIn }">
        <li><a href="${pageContext.request.contextPath}/login">LOGIN</a></li>
@@ -37,7 +47,7 @@
       
      <c:if test="${sessionScope.role=='user'}">
        <li><a href="${pageContext.request.contextPath }/productDisplay">Display Product</a></li>
-      	 <li><a href="${pageContext.request.contextPath }/cart">Cart</a></li>
+      	 <li><a href="${pageContext.request.contextPath }/cart">Cart <i class="fas fa-shopping-cart"></i></a></li>
       </c:if>
       
       </c:if>
@@ -50,6 +60,8 @@
   <font color="white" face="calibri" size="3">Welcome :${username}</font>
   <a href="${pageContext.request.contextPath}/perform_logout"><font color="white" face="calibri" size="2">LOGOUT</font></a>
  </c:if>
+
+ 
   </div>
   
 </nav>

@@ -13,21 +13,27 @@
 <link rel="stylesheet" href="resources/css/fontawsome.css"> -->
 
 
-<style>"src/main/webapp/WEB-INF/views/index.jsp"
+<style>
 /* Make the image fully responsive */
 .carousel-inner img {
 	width: 100%;
 	height: 100%;
 }
+
+body{
+
+background:url(resources/images/wallpaper2.jpg) no-repeat;
+background-size: cover;
+}
 </style>
 
 </head>
 <body>
-	<div class="container">
+	<div class="container-fluid" >
 	
 		
 		
-		<div class="container">
+		
 			<c:if test="${UserClickedHome==true}">
 			<%@include file="home.jsp" %>
 			</c:if>
@@ -35,7 +41,7 @@
 			<%@include file="showcategory.jsp" %>
 			</c:if>
 			
-		</div>
+		
 		
 		<!-- -------- FOOTER  -------- -->
 		<%@include file="templates/footer.jsp" %>

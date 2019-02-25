@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="resources/css/fontawsome.css"> -->
 
 
-<style>"src/main/webapp/WEB-INF/views/index.jsp"
+<style>
 /* Make the image fully responsive */
 .carousel-inner img {
 	width: 100%;

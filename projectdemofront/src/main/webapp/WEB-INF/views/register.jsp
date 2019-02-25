@@ -12,6 +12,36 @@
 <script src="resources/js/bootstrap.js"></script>
 <link rel="stylesheet" href="resources/css/fontawsome.css">
  -->
+ 
+ 
+ <style>
+ table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  
+} 
+
+input[type=submit] {
+  width: 20%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+ /* tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+  */
+ </style>
 </head>
 <body>
 
@@ -21,35 +51,61 @@
 	<%@include file="templates/navbar.jsp"%>
 
 	<div class="container">
-		<h1 class="well">Registration Form</h1>
-		<hr>
+		
+		<img alt="registration" src="resources/images/REGISTRATIONFORM.gif" width="100%">
+		</br></br>
+		
 		<center>
 		<form:form modelAttribute="user"
 			action="${pageContext.request.contextPath}/${url}" method="post">
 
 			<form:hidden path="u_id"/>
-			Name<form:input path="name" placeholder="name" /></br>
-			Email<form:input path="email" placeholder="email" /></br>
-			Password<form:input path="password" placeholder="password" /></br>
-			Phone<form:input path="phone" placeholder="phone" /></br>
-			Address<form:input path="address" placeholder="address" /></br>
-			Role<form:input path="role" placeholder="role" /></br>
-			Enabled<form:input path="enabled" placeholder="True/False" /></br>
-
-
-			<c:if test="${UserClickedEdit==true}">
+			<table>
+			<tr>
+			<td>Name</td>  <td><form:input path="name" placeholder="name" /></td>
+			</tr>
+			<tr>
+			<td>Email</td>  <td><form:input path="email" placeholder="email" /></td>
+			</tr>
+			<tr>
+			<td>Password</td>  <td><form:input type="password" path="password" placeholder="password" /></td>
+			</tr>
+			<tr>
+			<td>Phone</td>  <td><form:input path="phone" placeholder="phone" /></td>
+			</tr>
+			<tr>
+			<td>Address</td>  <td><form:input path="address" placeholder="address" /></td>
+			</tr>
+			<tr>
+			<td>Role</td>  <td><form:input path="role" placeholder="role" /></td>
+			</tr>
+			<tr>
+			<td>Enabled</td>  <td><form:input path="enabled" placeholder="True/False" /></td>
+			</tr>
+			<tr>
+			<td></td>
+			<td><c:if test="${UserClickedEdit==true}">
 				<input type="submit" value="Update user" />
 			</c:if>
 			<c:if test="${UserClickedEdit!=true}">
 				<input type="submit" value="Save user" />
-			</c:if>
+			</c:if></td>
+			</tr>
+			
+			
+</table>
+
+			
 
 		</form:form>
 		</center>
 
-		<table align="center" width="300">
+		<table align="center" width="300" cellpadding="50" cellspacing="70" style="border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;">
 			<thead>
-				<tr bgcolor="aqua">
+				<tr bgcolor="yellow">
 
 					<th>ID</th>
 					<th>NAME</th>
@@ -62,9 +118,9 @@
 					<th>Action</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody >
 				<c:forEach items="${userlist}" var="user">
-					<tr>
+					<tr style="background-color: #f2f2f2;">
 						
 						<td>${user.u_id}</td>
 						<td>${user.name}</td>
@@ -76,10 +132,10 @@
 						<td>${user.enabled}</td>
 
 						<td><a
-							href="${pageContext.request.contextPath}/edituser/${user.u_id}">Edit</a>
+							href="${pageContext.request.contextPath}/edituser/${user.u_id}"> <i class="fas fa-user-edit"></i> </a>
 
 							<a
-							href="${pageContext.request.contextPath}/deleteuser/${user.u_id}">Delete</a>
+							href="${pageContext.request.contextPath}/deleteuser/${user.u_id}"><i class="fas fa-trash"></i></a>
 
 						</td>
 					</tr>

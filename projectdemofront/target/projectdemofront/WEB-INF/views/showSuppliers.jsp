@@ -7,11 +7,7 @@
 <meta charset="ISO-8859-1">
 <title>OnlineShop</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link rel="stylesheet" href="resources/css/bootstrap.css">
-<script src="resources/js/jquery-3.3.1.js"></script>
-<script src="resources/js/popper.js"></script>
-<script src="resources/js/bootstrap.js"></script>
-<link rel="stylesheet" href="resources/css/fontawsome.css"> -->
+
 
 </head>
 
